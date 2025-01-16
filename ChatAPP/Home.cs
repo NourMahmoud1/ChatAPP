@@ -56,13 +56,20 @@ namespace ChatAPP
 
 		private void btnSendMessage_Click(object sender, EventArgs e)
 		{
-			if(SharedData.UsersSelected.Count == 0)
+			//check if user is selected
+			if (SharedData.UsersSelected.Count == 0)
 			{
 				MessageBox.Show("Please select a user to send message");
 			}
+			//chech the message and subject
+			else if (txtMessage.Text == "" || txtSubject.Text == "")
+			{
+				MessageBox.Show("Please enter the message and subject");
+			}
 			else
 			{
-				if (NewMessageBL.NewMessage(LoginBL.UserId, txtMessage.Text, txtSubject.Text) == 1)
+				//send message
+				if (NewMessageBL.NewMessage(txtMessage.Text, txtSubject.Text) == 1)
 				{
 					MessageBox.Show("Message Sent Successfully");
 				}

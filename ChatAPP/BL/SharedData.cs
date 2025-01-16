@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ChatAPP.BL
 {
-	internal class SharedData
+	internal static class SharedData
 	{
 		public static List<int> UsersSelected { get; set; } = new List<int>();
+		public static string UserId = "0";
 
 	}
 }

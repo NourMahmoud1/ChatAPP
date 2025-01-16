@@ -9,7 +9,6 @@ namespace ChatAPP.BL
 {
 	internal static class LoginBL
 	{
-		public static string UserId = "0";
 		public static string CheckUser(string UserName, string Password)
 		{
 			string querry = "select * from Users where UserName = '" + UserName + "' and Password = '" + Password + "'";
@@ -21,7 +20,7 @@ namespace ChatAPP.BL
 			else
 			{
 				//MessageBox.Show(userId);
-				UserId = userId;
+				SharedData.UserId = userId;
 				return userId;
 			}
 		}

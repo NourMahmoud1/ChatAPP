@@ -28,7 +28,16 @@ namespace ChatAPP.BL
 				return null;
 			}
 		}
-		public static int NewMessage(string senderID, string message, string subject)
+
+
+		/// <summary>
+		/// Sends a new message to all users selected in the SharedData.UsersSelected list.
+		/// Inserts a new record into the Messages table for each recipient.
+		/// </summary>
+		/// <param name="message">The body of the message to be sent.</param>
+		/// <param name="subject">The subject of the message to be sent.</param>
+		/// <returns>Returns 1 if the message was successfully sent to all recipients, otherwise returns 0.</returns>
+		public static int NewMessage(string message, string subject)
 		{
 			try
 			{
@@ -39,19 +48,21 @@ namespace ChatAPP.BL
 					cmd.Parameters.AddWithValue("@Body", message);
 					cmd.Parameters.AddWithValue("@Subject", subject);
 					cmd.Parameters.AddWithValue("@DateSent", DateTime.Now);
-					cmd.Parameters.AddWithValue("@SenderID", LoginBL.UserId);
+					cmd.Parameters.AddWithValue("@SenderID", SharedData.UserId);
 					cmd.Parameters.AddWithValue("@RecipientID", recipientId);
 					cmd.Parameters.AddWithValue("@IsRead", 0);
 					ChatDL.DML(cmd);
 				}
-				return 1;
 			}
 			catch (Exception e)
 			{
 				DialogResult result = MessageBox.Show(e.Message.ToString());
 				return 0;
 			}
+			return 1;
 			//string query = "INSERT INTO Messages(Body,Subject,DateSent,SenderID,RecipientID,IsRead) values(@Body,@Subject,@DateSent,@SenderID,@RecipientID,@IsRead)";
 		}
+
+
 	}
 }
