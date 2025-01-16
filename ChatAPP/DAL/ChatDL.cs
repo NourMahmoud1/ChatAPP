@@ -34,6 +34,11 @@ namespace ChatAPP.DAL
 				return errortable;
 			}
 		}
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="cmd"></param>
+		/// <returns></returns>
 		public static int DML(SqlCommand cmd)
 		{
 			try
