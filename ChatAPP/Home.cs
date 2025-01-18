@@ -17,7 +17,7 @@ namespace ChatAPP
 		{
 			InitializeComponent();
 		}
-		
+
 
 		private void tabPage1_Click(object sender, EventArgs e)
 		{
@@ -37,7 +37,7 @@ namespace ChatAPP
 					foreach (DataRow row in dt.Rows)
 					{
 						listItems[i] = new UserItem();
-						
+
 						listItems[i].UserName = row["UserName"].ToString();
 						listItems[i].UserEmail = row["Email"].ToString();
 						listItems[i].UserID = row["UserId"].ToString();
@@ -46,12 +46,46 @@ namespace ChatAPP
 				}
 			}
 
+		}
+		private void GenerateDynamicUserControlAllMessages()
+		{
+			flowLayoutInbox.Controls.Clear();
+			DataTable dt = InboxBL.GetLatestMessagesForRecipient();
+			if (dt != null || dt.Rows.Count > 0)
+			{
+				MessageDetails[] listItems = new MessageDetails[5];
 
-				
-        }
+				for (int i = 0; i < 1; i++)
+				{
+					foreach (DataRow row in dt.Rows)
+					{
+						// get the sender data
+						DataTable dt1 = InboxBL.GetSenderData(row["SenderID"].ToString());
+						listItems[i] = new MessageDetails();
+						listItems[i].UserName = dt1.Rows[0]["UserName"].ToString();
+						listItems[i].Time = row["DateSent"].ToString();
+						listItems[i].Subject = row["Subject"].ToString();
+						flowLayoutInbox.Controls.Add(listItems[i]);
+					}
+				}
+			}
+
+		}
+		private void UserResivedMessages()
+		{
+			flowLayoutInbox.Controls.Clear();
+			MessageDetails[] listItems = new MessageDetails[5];
+			for (int i = 0; i < 5; i++)
+			{
+				listItems[i] = new MessageDetails();
+				flowLayoutInbox.Controls.Add(listItems[i]);
+			}
+		}
 		private void Home_Load(object sender, EventArgs e)
 		{
 			GenerateDynamicUserControlAllUsers();
+			GenerateDynamicUserControlAllMessages();
+			//UserResivedMessages();
 		}
 
 		private void btnSendMessage_Click(object sender, EventArgs e)

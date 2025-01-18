@@ -48,12 +48,15 @@
 			this.txtSubject = new Bunifu.UI.WinForms.BunifuTextBox();
 			this.txtMessage = new Bunifu.UI.WinForms.BunifuTextBox();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.flowLayoutInbox = new System.Windows.Forms.FlowLayoutPanel();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.guna2TabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.bunifuPanel1.SuspendLayout();
 			this.bunifuPanel2.SuspendLayout();
+			this.tabPage2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// guna2TabControl1
@@ -395,6 +398,8 @@
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.tableLayoutPanel1);
+			this.tabPage2.Controls.Add(this.flowLayoutInbox);
 			this.tabPage2.ImageIndex = 1;
 			this.tabPage2.Location = new System.Drawing.Point(4, 64);
 			this.tabPage2.Name = "tabPage2";
@@ -403,6 +408,16 @@
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Inbox";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// flowLayoutInbox
+			// 
+			this.flowLayoutInbox.AutoScroll = true;
+			this.flowLayoutInbox.BackColor = System.Drawing.Color.Gainsboro;
+			this.flowLayoutInbox.Dock = System.Windows.Forms.DockStyle.Left;
+			this.flowLayoutInbox.Location = new System.Drawing.Point(3, 3);
+			this.flowLayoutInbox.Name = "flowLayoutInbox";
+			this.flowLayoutInbox.Size = new System.Drawing.Size(360, 382);
+			this.flowLayoutInbox.TabIndex = 3;
 			// 
 			// tabPage3
 			// 
@@ -423,6 +438,19 @@
 			this.imageList1.Images.SetKeyName(1, "icons8-received-100.png");
 			this.imageList1.Images.SetKeyName(2, "icons8-send-email-100.png");
 			// 
+			// tableLayoutPanel1
+			// 
+			this.tableLayoutPanel1.ColumnCount = 2;
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(363, 3);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+			this.tableLayoutPanel1.RowCount = 1;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 382);
+			this.tableLayoutPanel1.TabIndex = 4;
+			// 
 			// Home
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,6 +465,7 @@
 			this.tabPage1.ResumeLayout(false);
 			this.bunifuPanel1.ResumeLayout(false);
 			this.bunifuPanel2.ResumeLayout(false);
+			this.tabPage2.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -454,6 +483,8 @@
 		private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
 		private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
 		private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSendMessage;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutInbox;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 	}
 }
 
