@@ -30,15 +30,15 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-			Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+			Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
 			this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
@@ -48,10 +48,11 @@
 			this.txtSubject = new Bunifu.UI.WinForms.BunifuTextBox();
 			this.txtMessage = new Bunifu.UI.WinForms.BunifuTextBox();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.flowLayoutMessages = new System.Windows.Forms.FlowLayoutPanel();
 			this.flowLayoutInbox = new System.Windows.Forms.FlowLayoutPanel();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.btnLogOUT = new Guna.UI2.WinForms.Guna2ImageButton();
 			this.guna2TabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.bunifuPanel1.SuspendLayout();
@@ -64,31 +65,32 @@
 			this.guna2TabControl1.Controls.Add(this.tabPage1);
 			this.guna2TabControl1.Controls.Add(this.tabPage2);
 			this.guna2TabControl1.Controls.Add(this.tabPage3);
+			this.guna2TabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.guna2TabControl1.ItemSize = new System.Drawing.Size(220, 60);
 			this.guna2TabControl1.Location = new System.Drawing.Point(0, 0);
 			this.guna2TabControl1.Name = "guna2TabControl1";
 			this.guna2TabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.guna2TabControl1.SelectedIndex = 0;
-			this.guna2TabControl1.Size = new System.Drawing.Size(866, 456);
+			this.guna2TabControl1.Size = new System.Drawing.Size(937, 488);
 			this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
 			this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
 			this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 15F);
 			this.guna2TabControl1.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
 			this.guna2TabControl1.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
 			this.guna2TabControl1.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
-			this.guna2TabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+			this.guna2TabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
 			this.guna2TabControl1.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 14F);
 			this.guna2TabControl1.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
-			this.guna2TabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+			this.guna2TabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
 			this.guna2TabControl1.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
-			this.guna2TabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+			this.guna2TabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(44)))), ((int)(((byte)(56)))));
 			this.guna2TabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 16F);
 			this.guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
-			this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
+			this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
 			this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(220, 60);
 			this.guna2TabControl1.TabIndex = 0;
-			this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+			this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
 			this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
 			// 
 			// tabPage1
@@ -98,7 +100,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 64);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(858, 388);
+			this.tabPage1.Size = new System.Drawing.Size(929, 420);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "New Message";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -120,7 +122,7 @@
 			this.bunifuPanel1.Location = new System.Drawing.Point(3, 3);
 			this.bunifuPanel1.Name = "bunifuPanel1";
 			this.bunifuPanel1.ShowBorders = true;
-			this.bunifuPanel1.Size = new System.Drawing.Size(852, 382);
+			this.bunifuPanel1.Size = new System.Drawing.Size(923, 414);
 			this.bunifuPanel1.TabIndex = 3;
 			// 
 			// bunifuPanel2
@@ -131,12 +133,13 @@
 			this.bunifuPanel2.BorderColor = System.Drawing.Color.Transparent;
 			this.bunifuPanel2.BorderRadius = 3;
 			this.bunifuPanel2.BorderThickness = 1;
+			this.bunifuPanel2.Controls.Add(this.btnLogOUT);
 			this.bunifuPanel2.Controls.Add(this.btnSendMessage);
 			this.bunifuPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.bunifuPanel2.Location = new System.Drawing.Point(0, 320);
+			this.bunifuPanel2.Location = new System.Drawing.Point(0, 352);
 			this.bunifuPanel2.Name = "bunifuPanel2";
 			this.bunifuPanel2.ShowBorders = true;
-			this.bunifuPanel2.Size = new System.Drawing.Size(488, 62);
+			this.bunifuPanel2.Size = new System.Drawing.Size(559, 62);
 			this.bunifuPanel2.TabIndex = 3;
 			// 
 			// btnSendMessage
@@ -158,16 +161,16 @@
 			this.btnSendMessage.ColorContrastOnClick = 45;
 			this.btnSendMessage.ColorContrastOnHover = 45;
 			this.btnSendMessage.Cursor = System.Windows.Forms.Cursors.Hand;
-			borderEdges1.BottomLeft = true;
-			borderEdges1.BottomRight = true;
-			borderEdges1.TopLeft = true;
-			borderEdges1.TopRight = true;
-			this.btnSendMessage.CustomizableEdges = borderEdges1;
+			borderEdges2.BottomLeft = true;
+			borderEdges2.BottomRight = true;
+			borderEdges2.TopLeft = true;
+			borderEdges2.TopRight = true;
+			this.btnSendMessage.CustomizableEdges = borderEdges2;
 			this.btnSendMessage.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.btnSendMessage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
 			this.btnSendMessage.DisabledFillColor = System.Drawing.Color.Empty;
 			this.btnSendMessage.DisabledForecolor = System.Drawing.Color.Empty;
-			this.btnSendMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnSendMessage.Dock = System.Windows.Forms.DockStyle.Right;
 			this.btnSendMessage.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
 			this.btnSendMessage.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
 			this.btnSendMessage.ForeColor = System.Drawing.Color.White;
@@ -190,7 +193,7 @@
 			this.btnSendMessage.IdleIconRightImage = null;
 			this.btnSendMessage.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.btnSendMessage.IndicateFocus = false;
-			this.btnSendMessage.Location = new System.Drawing.Point(0, 0);
+			this.btnSendMessage.Location = new System.Drawing.Point(76, 0);
 			this.btnSendMessage.Name = "btnSendMessage";
 			this.btnSendMessage.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
 			this.btnSendMessage.OnDisabledState.BorderRadius = 62;
@@ -224,7 +227,7 @@
 			this.btnSendMessage.OnPressedState.ForeColor = System.Drawing.Color.White;
 			this.btnSendMessage.OnPressedState.IconLeftImage = null;
 			this.btnSendMessage.OnPressedState.IconRightImage = null;
-			this.btnSendMessage.Size = new System.Drawing.Size(488, 62);
+			this.btnSendMessage.Size = new System.Drawing.Size(483, 62);
 			this.btnSendMessage.TabIndex = 4;
 			this.btnSendMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.btnSendMessage.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -237,9 +240,9 @@
 			// 
 			this.flowLayoutAllUsers.AutoScroll = true;
 			this.flowLayoutAllUsers.Dock = System.Windows.Forms.DockStyle.Right;
-			this.flowLayoutAllUsers.Location = new System.Drawing.Point(488, 41);
+			this.flowLayoutAllUsers.Location = new System.Drawing.Point(559, 41);
 			this.flowLayoutAllUsers.Name = "flowLayoutAllUsers";
-			this.flowLayoutAllUsers.Size = new System.Drawing.Size(364, 341);
+			this.flowLayoutAllUsers.Size = new System.Drawing.Size(364, 373);
 			this.flowLayoutAllUsers.TabIndex = 2;
 			// 
 			// txtSubject
@@ -277,26 +280,26 @@
 			this.txtSubject.Modified = false;
 			this.txtSubject.Multiline = false;
 			this.txtSubject.Name = "txtSubject";
-			stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-			stateProperties1.FillColor = System.Drawing.Color.Empty;
-			stateProperties1.ForeColor = System.Drawing.Color.Empty;
-			stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-			this.txtSubject.OnActiveState = stateProperties1;
-			stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-			stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-			stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-			stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-			this.txtSubject.OnDisabledState = stateProperties2;
-			stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-			stateProperties3.FillColor = System.Drawing.Color.Empty;
-			stateProperties3.ForeColor = System.Drawing.Color.Empty;
-			stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-			this.txtSubject.OnHoverState = stateProperties3;
-			stateProperties4.BorderColor = System.Drawing.Color.Silver;
-			stateProperties4.FillColor = System.Drawing.Color.White;
-			stateProperties4.ForeColor = System.Drawing.Color.Empty;
-			stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-			this.txtSubject.OnIdleState = stateProperties4;
+			stateProperties9.BorderColor = System.Drawing.Color.DodgerBlue;
+			stateProperties9.FillColor = System.Drawing.Color.Empty;
+			stateProperties9.ForeColor = System.Drawing.Color.Empty;
+			stateProperties9.PlaceholderForeColor = System.Drawing.Color.Empty;
+			this.txtSubject.OnActiveState = stateProperties9;
+			stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+			stateProperties10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+			stateProperties10.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+			this.txtSubject.OnDisabledState = stateProperties10;
+			stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+			stateProperties11.FillColor = System.Drawing.Color.Empty;
+			stateProperties11.ForeColor = System.Drawing.Color.Empty;
+			stateProperties11.PlaceholderForeColor = System.Drawing.Color.Empty;
+			this.txtSubject.OnHoverState = stateProperties11;
+			stateProperties12.BorderColor = System.Drawing.Color.Silver;
+			stateProperties12.FillColor = System.Drawing.Color.White;
+			stateProperties12.ForeColor = System.Drawing.Color.Empty;
+			stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
+			this.txtSubject.OnIdleState = stateProperties12;
 			this.txtSubject.Padding = new System.Windows.Forms.Padding(3);
 			this.txtSubject.PasswordChar = '\0';
 			this.txtSubject.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -307,7 +310,7 @@
 			this.txtSubject.SelectionLength = 0;
 			this.txtSubject.SelectionStart = 0;
 			this.txtSubject.ShortcutsEnabled = true;
-			this.txtSubject.Size = new System.Drawing.Size(852, 41);
+			this.txtSubject.Size = new System.Drawing.Size(923, 41);
 			this.txtSubject.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
 			this.txtSubject.TabIndex = 0;
 			this.txtSubject.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -355,26 +358,26 @@
 			this.txtMessage.Modified = false;
 			this.txtMessage.Multiline = true;
 			this.txtMessage.Name = "txtMessage";
-			stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
-			stateProperties5.FillColor = System.Drawing.Color.Empty;
-			stateProperties5.ForeColor = System.Drawing.Color.Empty;
-			stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-			this.txtMessage.OnActiveState = stateProperties5;
-			stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-			stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-			stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-			stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-			this.txtMessage.OnDisabledState = stateProperties6;
-			stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-			stateProperties7.FillColor = System.Drawing.Color.Empty;
-			stateProperties7.ForeColor = System.Drawing.Color.Empty;
-			stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-			this.txtMessage.OnHoverState = stateProperties7;
-			stateProperties8.BorderColor = System.Drawing.Color.Silver;
-			stateProperties8.FillColor = System.Drawing.Color.White;
-			stateProperties8.ForeColor = System.Drawing.Color.Empty;
-			stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-			this.txtMessage.OnIdleState = stateProperties8;
+			stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
+			stateProperties13.FillColor = System.Drawing.Color.Empty;
+			stateProperties13.ForeColor = System.Drawing.Color.Empty;
+			stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+			this.txtMessage.OnActiveState = stateProperties13;
+			stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+			stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+			stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+			this.txtMessage.OnDisabledState = stateProperties14;
+			stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+			stateProperties15.FillColor = System.Drawing.Color.Empty;
+			stateProperties15.ForeColor = System.Drawing.Color.Empty;
+			stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+			this.txtMessage.OnHoverState = stateProperties15;
+			stateProperties16.BorderColor = System.Drawing.Color.Silver;
+			stateProperties16.FillColor = System.Drawing.Color.White;
+			stateProperties16.ForeColor = System.Drawing.Color.Empty;
+			stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+			this.txtMessage.OnIdleState = stateProperties16;
 			this.txtMessage.Padding = new System.Windows.Forms.Padding(3);
 			this.txtMessage.PasswordChar = '\0';
 			this.txtMessage.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -385,7 +388,7 @@
 			this.txtMessage.SelectionLength = 0;
 			this.txtMessage.SelectionStart = 0;
 			this.txtMessage.ShortcutsEnabled = true;
-			this.txtMessage.Size = new System.Drawing.Size(482, 273);
+			this.txtMessage.Size = new System.Drawing.Size(553, 305);
 			this.txtMessage.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
 			this.txtMessage.TabIndex = 1;
 			this.txtMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -398,25 +401,37 @@
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.tableLayoutPanel1);
+			this.tabPage2.Controls.Add(this.flowLayoutMessages);
 			this.tabPage2.Controls.Add(this.flowLayoutInbox);
 			this.tabPage2.ImageIndex = 1;
 			this.tabPage2.Location = new System.Drawing.Point(4, 64);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(858, 388);
+			this.tabPage2.Size = new System.Drawing.Size(929, 420);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Inbox";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// flowLayoutMessages
+			// 
+			this.flowLayoutMessages.AutoScroll = true;
+			this.flowLayoutMessages.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.flowLayoutMessages.Cursor = System.Windows.Forms.Cursors.Arrow;
+			this.flowLayoutMessages.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flowLayoutMessages.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+			this.flowLayoutMessages.Location = new System.Drawing.Point(363, 3);
+			this.flowLayoutMessages.Name = "flowLayoutMessages";
+			this.flowLayoutMessages.Size = new System.Drawing.Size(563, 414);
+			this.flowLayoutMessages.TabIndex = 4;
+			// 
 			// flowLayoutInbox
 			// 
 			this.flowLayoutInbox.AutoScroll = true;
-			this.flowLayoutInbox.BackColor = System.Drawing.Color.Gainsboro;
+			this.flowLayoutInbox.BackColor = System.Drawing.SystemColors.ButtonFace;
 			this.flowLayoutInbox.Dock = System.Windows.Forms.DockStyle.Left;
 			this.flowLayoutInbox.Location = new System.Drawing.Point(3, 3);
 			this.flowLayoutInbox.Name = "flowLayoutInbox";
-			this.flowLayoutInbox.Size = new System.Drawing.Size(360, 382);
+			this.flowLayoutInbox.Size = new System.Drawing.Size(360, 414);
 			this.flowLayoutInbox.TabIndex = 3;
 			// 
 			// tabPage3
@@ -425,7 +440,7 @@
 			this.tabPage3.Location = new System.Drawing.Point(4, 64);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(858, 388);
+			this.tabPage3.Size = new System.Drawing.Size(929, 420);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Sent Items";
 			this.tabPage3.UseVisualStyleBackColor = true;
@@ -438,25 +453,29 @@
 			this.imageList1.Images.SetKeyName(1, "icons8-received-100.png");
 			this.imageList1.Images.SetKeyName(2, "icons8-send-email-100.png");
 			// 
-			// tableLayoutPanel1
+			// btnLogOUT
 			// 
-			this.tableLayoutPanel1.ColumnCount = 2;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(363, 3);
-			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 1;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 382);
-			this.tableLayoutPanel1.TabIndex = 4;
+			this.btnLogOUT.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.btnLogOUT.Dock = System.Windows.Forms.DockStyle.Left;
+			this.btnLogOUT.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+			this.btnLogOUT.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOUT.Image")));
+			this.btnLogOUT.ImageOffset = new System.Drawing.Point(0, 0);
+			this.btnLogOUT.ImageRotate = 0F;
+			this.btnLogOUT.Location = new System.Drawing.Point(0, 0);
+			this.btnLogOUT.Name = "btnLogOUT";
+			this.btnLogOUT.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+			this.btnLogOUT.Size = new System.Drawing.Size(64, 62);
+			this.btnLogOUT.TabIndex = 0;
+			this.btnLogOUT.Click += new System.EventHandler(this.btnLogOUT_Click);
 			// 
 			// Home
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(866, 456);
+			this.ClientSize = new System.Drawing.Size(937, 488);
 			this.Controls.Add(this.guna2TabControl1);
+			this.MaximizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(953, 527);
 			this.Name = "Home";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Chat App";
@@ -484,7 +503,8 @@
 		private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
 		private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSendMessage;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutInbox;
-		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutMessages;
+		private Guna.UI2.WinForms.Guna2ImageButton btnLogOUT;
 	}
 }
 

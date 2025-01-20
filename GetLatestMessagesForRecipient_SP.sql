@@ -13,6 +13,7 @@ BEGIN
             ) AS RowNum
         FROM Messages
         WHERE RecipientID = @RecipientID
+		or SenderID = @RecipientID
     )
     SELECT *
     FROM RankedMessages

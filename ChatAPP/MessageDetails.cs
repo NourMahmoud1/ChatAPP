@@ -20,7 +20,7 @@ namespace ChatAPP
 		private string _userName;
 		private string _subject;
 		private string _time;
-		public string _userID = "1";
+		//public string _userID = "1";
 
 		[Category("Custom Props")]
 		public string UserName
@@ -40,10 +40,13 @@ namespace ChatAPP
 			get { return _time; }
 			set { _time = value; lblTime.Text = value; }
 		}
-
+        public string SenderID { get; set; }
+		public event EventHandler<string> DataSent;
 		private void btnMessageData_Click(object sender, EventArgs e)
 		{
 
+			string data = SenderID; // Example of user input
+			DataSent?.Invoke(this, data);   // Trigger the event
 		}
 	}
 }

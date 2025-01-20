@@ -32,7 +32,9 @@ namespace ChatAPP
 				MessageBox.Show("Please enter both username and password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
+			prograssin.Visible = true;
 
+			
 			// Check if the user credentials are correct
 			var user = LoginBL.CheckUser(txtUserName.Text, txtPassword.Text);
 			if (user != null)
@@ -44,6 +46,7 @@ namespace ChatAPP
 			else
 			{
 				MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				prograssin.Visible = false;
 			}
 		}
 		

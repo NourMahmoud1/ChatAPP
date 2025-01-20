@@ -95,14 +95,12 @@
 			// btnMessageData
 			// 
 			this.btnMessageData.BorderColor = System.Drawing.Color.Transparent;
-			this.btnMessageData.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
 			this.btnMessageData.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnMessageData.DisabledState.BorderColor = System.Drawing.Color.Transparent;
 			this.btnMessageData.DisabledState.CustomBorderColor = System.Drawing.Color.Transparent;
 			this.btnMessageData.DisabledState.FillColor = System.Drawing.Color.Transparent;
-			this.btnMessageData.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
 			this.btnMessageData.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btnMessageData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+			this.btnMessageData.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
 			this.btnMessageData.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.btnMessageData.ForeColor = System.Drawing.Color.Transparent;
 			this.btnMessageData.HoverState.BorderColor = System.Drawing.Color.Transparent;
@@ -123,7 +121,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
 			this.Controls.Add(this.lblUserName);
 			this.Controls.Add(this.lblTime);
 			this.Controls.Add(this.lblSubject);

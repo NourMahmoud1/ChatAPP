@@ -50,6 +50,7 @@
 			this.lblUserName.AutoEllipsis = false;
 			this.lblUserName.CursorType = null;
 			this.lblUserName.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblUserName.ForeColor = System.Drawing.Color.White;
 			this.lblUserName.Location = new System.Drawing.Point(82, 10);
 			this.lblUserName.Name = "lblUserName";
 			this.lblUserName.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -65,6 +66,7 @@
 			this.lblUserMail.AutoEllipsis = false;
 			this.lblUserMail.CursorType = null;
 			this.lblUserMail.Font = new System.Drawing.Font("Georgia", 12F);
+			this.lblUserMail.ForeColor = System.Drawing.Color.White;
 			this.lblUserMail.Location = new System.Drawing.Point(82, 39);
 			this.lblUserMail.Name = "lblUserMail";
 			this.lblUserMail.RightToLeft = System.Windows.Forms.RightToLeft.No;

@@ -41,6 +41,7 @@
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+			this.prograssin = new Guna.UI2.WinForms.Guna2WinProgressIndicator();
 			this.SuspendLayout();
 			// 
 			// btnExitApp
@@ -212,11 +213,23 @@
 			this.guna2DragControl1.TargetControl = this;
 			this.guna2DragControl1.UseTransparentDrag = true;
 			// 
+			// prograssin
+			// 
+			this.prograssin.AutoStart = true;
+			this.prograssin.BackColor = System.Drawing.Color.Transparent;
+			this.prograssin.Location = new System.Drawing.Point(199, 232);
+			this.prograssin.Name = "prograssin";
+			this.prograssin.Size = new System.Drawing.Size(59, 72);
+			this.prograssin.TabIndex = 38;
+			this.prograssin.UseTransparentBackground = true;
+			this.prograssin.Visible = false;
+			// 
 			// LogIN
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(511, 305);
+			this.Controls.Add(this.prograssin);
 			this.Controls.Add(this.guna2HtmlLabel2);
 			this.Controls.Add(this.btnLogin);
 			this.Controls.Add(this.txtPassword);
@@ -248,5 +261,6 @@
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
 		private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+		private Guna.UI2.WinForms.Guna2WinProgressIndicator prograssin;
 	}
 }
