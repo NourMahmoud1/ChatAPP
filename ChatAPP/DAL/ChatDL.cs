@@ -61,17 +61,18 @@ namespace ChatAPP.DAL
 			}
 
 		}
-		public static string GetValue(string sl)
+		public static async Task<string> GetValue(string sl)
 		{
 			string result = null;
 			try
 			{
 				SqlCommand.CommandText = sl;
 				SqlCommand.Connection = con;
-				con.Open();
-				if (SqlCommand.ExecuteScalar() != null)
+				await con.OpenAsync();
+				var scalarResult = await SqlCommand.ExecuteScalarAsync();
+				if (scalarResult != null)
 				{
-					result = SqlCommand.ExecuteScalar().ToString();
+					result = scalarResult.ToString();
 				}
 				return result;
 

@@ -217,7 +217,7 @@
 			// 
 			this.prograssin.AutoStart = true;
 			this.prograssin.BackColor = System.Drawing.Color.Transparent;
-			this.prograssin.Location = new System.Drawing.Point(199, 232);
+			this.prograssin.Location = new System.Drawing.Point(209, 232);
 			this.prograssin.Name = "prograssin";
 			this.prograssin.Size = new System.Drawing.Size(59, 72);
 			this.prograssin.TabIndex = 38;
@@ -240,6 +240,7 @@
 			this.Controls.Add(this.guna2CircleButton1);
 			this.Controls.Add(this.btnExitApp);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "LogIN";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "LogIN";

@@ -91,6 +91,7 @@
 			this.lblSubject.Text = "Subject";
 			this.lblSubject.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 			this.lblSubject.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+			this.lblSubject.Click += new System.EventHandler(this.lblSubject_Click);
 			// 
 			// btnMessageData
 			// 

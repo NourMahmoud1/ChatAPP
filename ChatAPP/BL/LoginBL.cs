@@ -9,10 +9,10 @@ namespace ChatAPP.BL
 {
 	internal static class LoginBL
 	{
-		public static string CheckUser(string UserName, string Password)
+		public static async Task<string> CheckUser(string UserName, string Password)
 		{
 			string querry = "select * from Users where UserName = '" + UserName + "' and Password = '" + Password + "'";
-			string userId = DAL.ChatDL.GetValue(querry);
+			string userId = await DAL.ChatDL.GetValue(querry);
 			if(userId == null)
 			{
 				return null;

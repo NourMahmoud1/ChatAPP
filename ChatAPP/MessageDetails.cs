@@ -48,5 +48,11 @@ namespace ChatAPP
 			string data = SenderID; // Example of user input
 			DataSent?.Invoke(this, data);   // Trigger the event
 		}
+
+		private void lblSubject_Click(object sender, EventArgs e)
+		{
+			// excute the btnmessageData_Click event
+			btnMessageData_Click(sender, e);
+		}
 	}
 }

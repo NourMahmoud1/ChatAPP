@@ -24,7 +24,7 @@ namespace ChatAPP
 		}
 
 		
-		private void btnLogin_Click(object sender, EventArgs e)
+		private async void btnLogin_Click(object sender, EventArgs e)
 		{
 			// Validate that both text boxes are not empty
 			if (string.IsNullOrWhiteSpace(txtUserName.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
@@ -33,10 +33,11 @@ namespace ChatAPP
 				return;
 			}
 			prograssin.Visible = true;
+			// Simulate a delay to show the progress indicator (for demonstration purposes)
+			//await Task.Delay(500);
 
-			
 			// Check if the user credentials are correct
-			var user = LoginBL.CheckUser(txtUserName.Text, txtPassword.Text);
+			var user = await Task.Run(() => LoginBL.CheckUser(txtUserName.Text, txtPassword.Text));
 			if (user != null)
 			{
 				Home home = new Home();

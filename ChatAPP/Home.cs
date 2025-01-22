@@ -43,6 +43,16 @@ namespace ChatAPP
 			}
 
 		}
+		public bool ValidationTextBoxSetting()
+		{
+			if (string.IsNullOrWhiteSpace(txtUserNameSetting.Text) || string.IsNullOrWhiteSpace(txtFullNameSetting.Text) || string.IsNullOrWhiteSpace(txtEmailSetting.Text) || string.IsNullOrWhiteSpace(txtPhoneSetting.Text) || string.IsNullOrWhiteSpace(txtPhoneSetting.Text))
+			{
+				MessageBox.Show("Please Fill All the Field.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				return false;
+			}
+			return true;
+		}
 		private void GenerateDynamicUserControlAllUsers()
 		{
 			flowLayoutAllUsers.Controls.Clear();
@@ -67,6 +77,29 @@ namespace ChatAPP
 			}
 
 		}
+		private void LoadUserDataInSettingPage()
+		{
+			DataTable dt = SettingBL.GetUserData();
+			if (dt != null || dt.Rows.Count > 0)
+			{
+				txtUserNameSetting.Text = dt.Rows[0]["UserName"].ToString();
+				txtFullNameSetting.Text = dt.Rows[0]["FullName"].ToString();
+				txtPhoneSetting.Text = dt.Rows[0]["Phone"].ToString();
+				txtEmailSetting.Text = dt.Rows[0]["Email"].ToString();
+				txtPasswordSetting.Text = dt.Rows[0]["password"].ToString();
+				try
+				{
+					DataTable dtGroup = SettingBL.GetGroupName(dt.Rows[0]["GroupId"].ToString());
+					txtGroupSetting.Text = dtGroup.Rows[0]["GroupName"].ToString();
+
+				}
+				catch (Exception)
+				{
+					MessageBox.Show("You are not in any group");
+				}
+			}
+
+		}
 		private void GenerateDynamicUserControlAllMessages()
 		{
 			flowLayoutInbox.Controls.Clear();
@@ -82,17 +115,19 @@ namespace ChatAPP
 						// get the sender data
 						string sendid = row["SenderID"].ToString();
 						DataTable dt1;
+						listItems[i] = new MessageDetails();
 						if (sendid == SharedData.UserId)
 						{
 							dt1 = InboxBL.GetSenderData(row["RecipientID"].ToString());
+							listItems[i].SenderID = row["RecipientID"].ToString();
+
 						}
 						else
 						{
 							dt1 = InboxBL.GetSenderData(row["SenderID"].ToString());
+							listItems[i].SenderID = row["SenderID"].ToString();
 						}
-						listItems[i] = new MessageDetails();
 						listItems[i].UserName = dt1.Rows[0]["UserName"].ToString();
-						listItems[i].SenderID = row["SenderID"].ToString();
 						listItems[i].Time = row["DateSent"].ToString();
 						listItems[i].Subject = row["Subject"].ToString();
 						listItems[i].DataSent += LoadMessages;
@@ -134,25 +169,31 @@ namespace ChatAPP
 				// Create a label for the subject
 				Label subjectLabel = new Label();
 				subjectLabel.Text = row["Subject"].ToString();
-				subjectLabel.Font = new Font(subjectLabel.Font.FontFamily, 12.2f, FontStyle.Regular);
+				//subjectLabel.Font = new Font(subjectLabel.Font.FontFamily, 13.2f, FontStyle.Bold);
+				//set font family to Segoe UI
+				subjectLabel.Font = new Font("Segoe UI", 12.2f, FontStyle.Regular);
 				subjectLabel.AutoSize = true;
 				subjectLabel.ForeColor = Color.DarkBlue;
 				subjectLabel.MaximumSize = new Size(flowLayoutMessages.Width - 50, 0);
 
 				// Create a label for the date sent
 				Label dateSentLabel = new Label();
-				dateSentLabel.Text =  row["DateSent"].ToString();
-				dateSentLabel.Font = new Font(dateSentLabel.Font.FontFamily, 10f, FontStyle.Regular);
+				dateSentLabel.Text = row["DateSent"].ToString();
+				//dateSentLabel.Font = new Font(dateSentLabel.Font.FontFamily, 10f, FontStyle.Regular);
+				dateSentLabel.Font = new Font("Segoe UI", 12.2f, FontStyle.Regular);
+
 				dateSentLabel.AutoSize = true;
 				dateSentLabel.MaximumSize = new Size(flowLayoutMessages.Width - 50, 0);
-				//dateSentLabel.TextAlign = ContentAlignment.MiddleRight;
 				dateSentLabel.Dock = DockStyle.Right;
+
 				// Create a label for the message body
 				Label messageLabel = new Label();
 				messageLabel.Text = row["Body"].ToString();
-				messageLabel.Font = new Font(messageLabel.Font.FontFamily, 11f, FontStyle.Regular);
+				//messageLabel.Font = new Font(messageLabel.Font.FontFamily, 11f, FontStyle.Regular);
+				messageLabel.Font = new Font("Segoe UI", 11f, FontStyle.Regular);
 				messageLabel.AutoSize = true;
 				messageLabel.MaximumSize = new Size(flowLayoutMessages.Width - 50, 0);
+				messageLabel.Margin = new Padding(0, 10, 0, 10);
 
 				// Check if the message is from the sender or the logged-in user
 				if (row["SenderID"].ToString() == SharedData.UserId)
@@ -160,12 +201,17 @@ namespace ChatAPP
 					// Message from the logged-in user
 					messagePanel.BackColor = Color.LightBlue;
 					messageLabel.TextAlign = ContentAlignment.MiddleLeft;
+					//flowLayoutMessages.FlowDirection = FlowDirection.LeftToRight;
 				}
 				else
 				{
 					// Message from the sender
+					//flowLayoutMessages.FlowDirection = FlowDirection.RightToLeft;
+
 					messagePanel.BackColor = Color.LightGreen;
 					messageLabel.TextAlign = ContentAlignment.MiddleLeft;
+					subjectLabel.Font = new Font("Segoe UI", 12.2f, FontStyle.Bold);
+
 				}
 
 				// Add the labels to the TableLayoutPanel
@@ -189,6 +235,10 @@ namespace ChatAPP
 		{
 			GenerateDynamicUserControlAllUsers();
 			GenerateDynamicUserControlAllMessages();
+			LoadUserDataInSettingPage();
+
+			DataTable dtmessage = messagesBL.GetAllMessages();
+			dataGridViewMessages.DataSource = dtmessage;
 			//LoadMessages("9");
 			//testflowlayout();
 		}
@@ -202,7 +252,7 @@ namespace ChatAPP
 			{
 				MessageBox.Show("Please select a user to send message");
 			}
-			//chech the message and subject
+			//chech the message and subjectNour
 			else if (txtMessage.Text == "" || txtSubject.Text == "")
 			{
 				MessageBox.Show("Please enter the message and subject");
@@ -213,6 +263,11 @@ namespace ChatAPP
 				if (NewMessageBL.NewMessage(txtMessage.Text, txtSubject.Text) == 1)
 				{
 					MessageBox.Show("Message Sent Successfully");
+					//clear the textboxes
+					txtMessage.Text = "";
+					txtSubject.Text = "";
+					GenerateDynamicUserControlAllMessages();
+
 				}
 				else
 				{
@@ -231,6 +286,86 @@ namespace ChatAPP
 			LogIN logIN = new LogIN();
 			logIN.Show();
 			this.Hide();
+		}
+
+		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void txtSearch_TextChanged(object sender, EventArgs e)
+		{
+			DataTable dt = messagesBL.Searchmessage(txtSearch.Text);
+
+			if (dt.Rows.Count > 0)
+			{
+				dataGridViewMessages.DataSource = dt;
+				//MessageBox.Show("Done");
+			}
+			else
+			{
+				//MessageBox.Show("No Books Found");
+			}
+			if (string.IsNullOrWhiteSpace(txtSearch.Text))
+			{
+				DataTable dtmessage = messagesBL.GetAllMessages();
+				dataGridViewMessages.DataSource = dtmessage;
+			}
+		}
+
+		private void btnEditSetting_Click(object sender, EventArgs e)
+		{
+			if (ValidationTextBoxSetting())
+			{
+				try
+				{
+					if (SettingBL.UpdateUserData(txtUserNameSetting.Text, txtFullNameSetting.Text, txtEmailSetting.Text, txtPasswordSetting.Text, txtPhoneSetting.Text) > 0)
+					{
+						MessageBox.Show("Your Data Updated Successfully");
+					}
+					else
+					{
+						MessageBox.Show("Failed to Update Your Data");
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+			}
+		}
+
+		private void SentCheckBox_Click(object sender, EventArgs e)
+		{
+			if (SentCheckBox.Checked)
+			{
+				SharedData.sentCheckStatus = true;
+			}
+			else
+			{
+				SharedData.sentCheckStatus = false;
+			}
+			DataTable dtmessage = messagesBL.GetAllMessages();
+			dataGridViewMessages.DataSource = dtmessage;
+		}
+
+		private void RecivedCheckBox_Click(object sender, EventArgs e)
+		{
+			if (RecivedCheckBox.Checked)
+			{
+				SharedData.reciveCheckStatus = true;
+			}
+			else
+			{
+				SharedData.reciveCheckStatus = false;
+			}
+			DataTable dtmessage = messagesBL.GetAllMessages();
+			dataGridViewMessages.DataSource = dtmessage;
 		}
 	}
 }
