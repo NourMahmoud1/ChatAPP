@@ -244,7 +244,6 @@ namespace ChatAPP
 		}
 
 
-
 		private void btnSendMessage_Click(object sender, EventArgs e)
 		{
 			//check if user is selected
@@ -275,6 +274,7 @@ namespace ChatAPP
 				}
 			}
 		}
+
 
 		private void messageDetails1_Load(object sender, EventArgs e)
 		{
@@ -366,6 +366,12 @@ namespace ChatAPP
 			}
 			DataTable dtmessage = messagesBL.GetAllMessages();
 			dataGridViewMessages.DataSource = dtmessage;
+		}
+
+		private void btnRefresh_Click(object sender, EventArgs e)
+		{
+			GenerateDynamicUserControlAllMessages();
+			flowLayoutMessages.Controls.Clear();
 		}
 	}
 }

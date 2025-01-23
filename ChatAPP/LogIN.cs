@@ -23,7 +23,14 @@ namespace ChatAPP
 			Application.Exit();
 		}
 
-		
+		private void txtPassword_KeyDown_1(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				btnLogin_Click(sender, e);
+			}
+		}
+
 		private async void btnLogin_Click(object sender, EventArgs e)
 		{
 			// Validate that both text boxes are not empty
@@ -33,6 +40,7 @@ namespace ChatAPP
 				return;
 			}
 			prograssin.Visible = true;
+			btnLogin.Enabled = false;
 			// Simulate a delay to show the progress indicator (for demonstration purposes)
 			//await Task.Delay(500);
 
@@ -48,16 +56,31 @@ namespace ChatAPP
 			{
 				MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				prograssin.Visible = false;
+				btnLogin.Enabled = true;
 			}
 		}
-		
 
-		private void txtPassword_KeyDown_1(object sender, KeyEventArgs e)
+		private void txtPassword_IconRightClick(object sender, EventArgs e)
 		{
-			if (e.KeyCode == Keys.Enter)
+			if(txtPassword.UseSystemPasswordChar == true)
 			{
-				btnLogin_Click(sender, e);
+				txtPassword.UseSystemPasswordChar = false;
 			}
+			else
+			{
+				txtPassword.UseSystemPasswordChar = true;
+			}
+		}
+
+		private void LogIN_Load(object sender, EventArgs e)
+		{
+			txtPassword.UseSystemPasswordChar = true;
+		}
+
+		private void txt_clear_Click(object sender, EventArgs e)
+		{
+			txtPassword.Clear();
+			txtUserName.Clear();
 		}
 	}
 }

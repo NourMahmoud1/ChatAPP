@@ -57,8 +57,11 @@ namespace ChatAPP
 			if (_isSelected == false)
 			{
 				_isSelected = true;
-				bunifuColorTransition1.AutoTransition = true;
-				//this.BackColor = Color.SeaGreen;
+				// set the color to the UserItems
+				
+
+				//bunifuColorTransition1.AutoTransition = true;
+				this.BackColor = Color.SeaGreen;
 				SharedData.UsersSelected.Add(Convert.ToInt32(UserID));
 
 
@@ -77,14 +80,5 @@ namespace ChatAPP
 			}
 		}
 
-		private void bunifuPictureBox1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void bunifuColorTransition1_ColorChanged(object sender, Bunifu.UI.WinForms.BunifuColorTransition.ColorChangedEventArgs e)
-		{
-
-		}
 	}
 }

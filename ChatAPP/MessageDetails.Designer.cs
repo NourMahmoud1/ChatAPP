@@ -29,69 +29,12 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageDetails));
-			this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-			this.lblUserName = new Bunifu.UI.WinForms.BunifuLabel();
-			this.lblTime = new Bunifu.UI.WinForms.BunifuLabel();
-			this.lblSubject = new Bunifu.UI.WinForms.BunifuLabel();
 			this.btnMessageData = new Guna.UI2.WinForms.Guna2Button();
+			this.lblUserName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
+			this.lblSubject = new System.Windows.Forms.Label();
+			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.SuspendLayout();
-			// 
-			// bunifuElipse1
-			// 
-			this.bunifuElipse1.ElipseRadius = 15;
-			this.bunifuElipse1.TargetControl = this;
-			// 
-			// lblUserName
-			// 
-			this.lblUserName.AllowParentOverrides = false;
-			this.lblUserName.AutoEllipsis = false;
-			this.lblUserName.CursorType = null;
-			this.lblUserName.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
-			this.lblUserName.ForeColor = System.Drawing.Color.White;
-			this.lblUserName.Location = new System.Drawing.Point(15, 3);
-			this.lblUserName.Name = "lblUserName";
-			this.lblUserName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.lblUserName.Size = new System.Drawing.Size(109, 23);
-			this.lblUserName.TabIndex = 2;
-			this.lblUserName.Text = "User Name";
-			this.lblUserName.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-			this.lblUserName.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-			// 
-			// lblTime
-			// 
-			this.lblTime.AllowParentOverrides = false;
-			this.lblTime.AutoEllipsis = false;
-			this.lblTime.CursorType = null;
-			this.lblTime.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
-			this.lblTime.ForeColor = System.Drawing.Color.White;
-			this.lblTime.Location = new System.Drawing.Point(15, 31);
-			this.lblTime.Name = "lblTime";
-			this.lblTime.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.lblTime.Size = new System.Drawing.Size(45, 23);
-			this.lblTime.TabIndex = 4;
-			this.lblTime.Text = "time";
-			this.lblTime.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-			this.lblTime.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-			// 
-			// lblSubject
-			// 
-			this.lblSubject.AllowParentOverrides = false;
-			this.lblSubject.AutoEllipsis = true;
-			this.lblSubject.AutoSize = false;
-			this.lblSubject.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.lblSubject.CursorType = System.Windows.Forms.Cursors.Hand;
-			this.lblSubject.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
-			this.lblSubject.ForeColor = System.Drawing.Color.Transparent;
-			this.lblSubject.Location = new System.Drawing.Point(15, 54);
-			this.lblSubject.Name = "lblSubject";
-			this.lblSubject.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.lblSubject.Size = new System.Drawing.Size(314, 43);
-			this.lblSubject.TabIndex = 6;
-			this.lblSubject.Text = "Subject";
-			this.lblSubject.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-			this.lblSubject.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-			this.lblSubject.Click += new System.EventHandler(this.lblSubject_Click);
 			// 
 			// btnMessageData
 			// 
@@ -117,15 +60,56 @@
 			this.btnMessageData.TabIndex = 11;
 			this.btnMessageData.Click += new System.EventHandler(this.btnMessageData_Click);
 			// 
+			// lblUserName
+			// 
+			this.lblUserName.BackColor = System.Drawing.Color.Transparent;
+			this.lblUserName.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblUserName.ForeColor = System.Drawing.Color.White;
+			this.lblUserName.Location = new System.Drawing.Point(15, 3);
+			this.lblUserName.Name = "lblUserName";
+			this.lblUserName.Size = new System.Drawing.Size(112, 25);
+			this.lblUserName.TabIndex = 12;
+			this.lblUserName.Text = "User Name";
+			// 
+			// lblTime
+			// 
+			this.lblTime.BackColor = System.Drawing.Color.Transparent;
+			this.lblTime.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblTime.ForeColor = System.Drawing.Color.White;
+			this.lblTime.Location = new System.Drawing.Point(15, 30);
+			this.lblTime.Name = "lblTime";
+			this.lblTime.Size = new System.Drawing.Size(48, 25);
+			this.lblTime.TabIndex = 13;
+			this.lblTime.Text = "time";
+			this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
+			// 
+			// lblSubject
+			// 
+			this.lblSubject.AutoEllipsis = true;
+			this.lblSubject.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.lblSubject.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(1)), true);
+			this.lblSubject.ForeColor = System.Drawing.Color.White;
+			this.lblSubject.Location = new System.Drawing.Point(11, 58);
+			this.lblSubject.Name = "lblSubject";
+			this.lblSubject.Size = new System.Drawing.Size(304, 32);
+			this.lblSubject.TabIndex = 14;
+			this.lblSubject.Text = "label1";
+			this.lblSubject.Click += new System.EventHandler(this.lblSubject_Click);
+			// 
+			// guna2Elipse1
+			// 
+			this.guna2Elipse1.BorderRadius = 4;
+			this.guna2Elipse1.TargetControl = this;
+			// 
 			// MessageDetails
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-			this.Controls.Add(this.lblUserName);
-			this.Controls.Add(this.lblTime);
 			this.Controls.Add(this.lblSubject);
+			this.Controls.Add(this.lblTime);
+			this.Controls.Add(this.lblUserName);
 			this.Controls.Add(this.btnMessageData);
 			this.Name = "MessageDetails";
 			this.Size = new System.Drawing.Size(329, 97);
@@ -135,10 +119,10 @@
 		}
 
 		#endregion
-		private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-		private Bunifu.UI.WinForms.BunifuLabel lblUserName;
-		private Bunifu.UI.WinForms.BunifuLabel lblTime;
-		private Bunifu.UI.WinForms.BunifuLabel lblSubject;
 		private Guna.UI2.WinForms.Guna2Button btnMessageData;
+		private Guna.UI2.WinForms.Guna2HtmlLabel lblTime;
+		private Guna.UI2.WinForms.Guna2HtmlLabel lblUserName;
+		private System.Windows.Forms.Label lblSubject;
+		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
 	}
 }

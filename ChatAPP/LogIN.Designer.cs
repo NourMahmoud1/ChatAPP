@@ -37,11 +37,12 @@
 			this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
 			this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
-			this.btnLogin = new Bunifu.Framework.UI.BunifuThinButton2();
 			this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
 			this.prograssin = new Guna.UI2.WinForms.Guna2WinProgressIndicator();
+			this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
+			this.txt_clear = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// btnExitApp
@@ -58,7 +59,7 @@
 			this.btnExitApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
 			this.btnExitApp.HoverState.FillColor = System.Drawing.Color.Red;
 			this.btnExitApp.HoverState.ForeColor = System.Drawing.Color.White;
-			this.btnExitApp.Location = new System.Drawing.Point(456, -3);
+			this.btnExitApp.Location = new System.Drawing.Point(455, 0);
 			this.btnExitApp.Name = "btnExitApp";
 			this.btnExitApp.PressedColor = System.Drawing.Color.Red;
 			this.btnExitApp.Size = new System.Drawing.Size(55, 32);
@@ -128,17 +129,17 @@
 			this.txtUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.txtUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.txtUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txtUserName.Font = new System.Drawing.Font("Georgia", 9.75F);
+			this.txtUserName.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
 			this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-			this.txtUserName.Location = new System.Drawing.Point(279, 85);
-			this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
+			this.txtUserName.Location = new System.Drawing.Point(279, 80);
+			this.txtUserName.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
 			this.txtUserName.Name = "txtUserName";
 			this.txtUserName.PasswordChar = '\0';
 			this.txtUserName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
 			this.txtUserName.PlaceholderText = "USER NAME";
 			this.txtUserName.SelectedText = "";
-			this.txtUserName.Size = new System.Drawing.Size(200, 43);
+			this.txtUserName.Size = new System.Drawing.Size(208, 48);
 			this.txtUserName.TabIndex = 0;
 			// 
 			// txtPassword
@@ -152,51 +153,30 @@
 			this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
 			this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-			this.txtPassword.Font = new System.Drawing.Font("Georgia", 9.75F);
+			this.txtPassword.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
 			this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
+			this.txtPassword.IconRight = ((System.Drawing.Image)(resources.GetObject("txtPassword.IconRight")));
+			this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+			this.txtPassword.IconRightSize = new System.Drawing.Size(40, 40);
 			this.txtPassword.Location = new System.Drawing.Point(279, 135);
+			this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.txtPassword.Name = "txtPassword";
-			this.txtPassword.PasswordChar = '*';
+			this.txtPassword.PasswordChar = '\0';
 			this.txtPassword.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
 			this.txtPassword.PlaceholderText = "PASSWORD";
 			this.txtPassword.SelectedText = "";
-			this.txtPassword.Size = new System.Drawing.Size(200, 43);
+			this.txtPassword.Size = new System.Drawing.Size(208, 46);
 			this.txtPassword.TabIndex = 1;
+			this.txtPassword.IconRightClick += new System.EventHandler(this.txtPassword_IconRightClick);
 			this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown_1);
-			// 
-			// btnLogin
-			// 
-			this.btnLogin.ActiveBorderThickness = 1;
-			this.btnLogin.ActiveCornerRadius = 20;
-			this.btnLogin.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-			this.btnLogin.ActiveForecolor = System.Drawing.Color.White;
-			this.btnLogin.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-			this.btnLogin.BackColor = System.Drawing.SystemColors.Control;
-			this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
-			this.btnLogin.ButtonText = "LOGIN";
-			this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnLogin.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnLogin.ForeColor = System.Drawing.Color.White;
-			this.btnLogin.IdleBorderThickness = 1;
-			this.btnLogin.IdleCornerRadius = 20;
-			this.btnLogin.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-			this.btnLogin.IdleForecolor = System.Drawing.Color.White;
-			this.btnLogin.IdleLineColor = System.Drawing.Color.SeaGreen;
-			this.btnLogin.Location = new System.Drawing.Point(279, 198);
-			this.btnLogin.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
-			this.btnLogin.Name = "btnLogin";
-			this.btnLogin.Size = new System.Drawing.Size(200, 52);
-			this.btnLogin.TabIndex = 2;
-			this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
 			// 
 			// guna2HtmlLabel2
 			// 
 			this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
 			this.guna2HtmlLabel2.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-			this.guna2HtmlLabel2.Location = new System.Drawing.Point(339, 42);
+			this.guna2HtmlLabel2.Location = new System.Drawing.Point(344, 42);
 			this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
 			this.guna2HtmlLabel2.Size = new System.Drawing.Size(78, 27);
 			this.guna2HtmlLabel2.TabIndex = 36;
@@ -224,14 +204,45 @@
 			this.prograssin.UseTransparentBackground = true;
 			this.prograssin.Visible = false;
 			// 
+			// btnLogin
+			// 
+			this.btnLogin.Animated = true;
+			this.btnLogin.BorderRadius = 8;
+			this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+			this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+			this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+			this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+			this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+			this.btnLogin.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+			this.btnLogin.ForeColor = System.Drawing.Color.White;
+			this.btnLogin.Location = new System.Drawing.Point(279, 195);
+			this.btnLogin.Name = "btnLogin";
+			this.btnLogin.Size = new System.Drawing.Size(208, 45);
+			this.btnLogin.TabIndex = 39;
+			this.btnLogin.Text = "LOGIN";
+			this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+			// 
+			// txt_clear
+			// 
+			this.txt_clear.AutoSize = true;
+			this.txt_clear.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.txt_clear.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Italic);
+			this.txt_clear.Location = new System.Drawing.Point(361, 253);
+			this.txt_clear.Name = "txt_clear";
+			this.txt_clear.Size = new System.Drawing.Size(44, 18);
+			this.txt_clear.TabIndex = 40;
+			this.txt_clear.Text = "Clear";
+			this.txt_clear.Click += new System.EventHandler(this.txt_clear_Click);
+			// 
 			// LogIN
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(511, 305);
+			this.Controls.Add(this.txt_clear);
+			this.Controls.Add(this.btnLogin);
 			this.Controls.Add(this.prograssin);
 			this.Controls.Add(this.guna2HtmlLabel2);
-			this.Controls.Add(this.btnLogin);
 			this.Controls.Add(this.txtPassword);
 			this.Controls.Add(this.txtUserName);
 			this.Controls.Add(this.guna2HtmlLabel5);
@@ -244,6 +255,7 @@
 			this.Name = "LogIN";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "LogIN";
+			this.Load += new System.EventHandler(this.LogIN_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -258,10 +270,12 @@
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
 		private Guna.UI2.WinForms.Guna2TextBox txtUserName;
 		private Guna.UI2.WinForms.Guna2TextBox txtPassword;
-		private Bunifu.Framework.UI.BunifuThinButton2 btnLogin;
+		//private Bunifu.Framework.UI.BunifuThinButton2 btnLogin;
 		private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
 		private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
 		private Guna.UI2.WinForms.Guna2WinProgressIndicator prograssin;
+		private Guna.UI2.WinForms.Guna2Button btnLogin;
+		private System.Windows.Forms.Label txt_clear;
 	}
 }

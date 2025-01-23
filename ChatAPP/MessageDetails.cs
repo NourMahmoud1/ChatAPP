@@ -49,6 +49,13 @@ namespace ChatAPP
 			DataSent?.Invoke(this, data);   // Trigger the event
 		}
 
+		
+
+		private void lblTime_Click(object sender, EventArgs e)
+		{
+
+		}
+
 		private void lblSubject_Click(object sender, EventArgs e)
 		{
 			// excute the btnmessageData_Click event
