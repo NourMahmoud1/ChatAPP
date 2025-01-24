@@ -64,6 +64,12 @@
     <Compile Include="BL\SettingBL.cs" />
     <Compile Include="BL\SharedData.cs" />
     <Compile Include="DAL\ChatDL.cs" />
+    <Compile Include="GroupsItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroupsItems.Designer.cs">
+      <DependentUpon>GroupsItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="UserItem.Designer.cs">
       <DependentUpon>UserItem.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GroupsItems.resx">
+      <DependentUpon>GroupsItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>

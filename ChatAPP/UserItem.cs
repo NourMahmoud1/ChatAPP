@@ -57,13 +57,10 @@ namespace ChatAPP
 			if (_isSelected == false)
 			{
 				_isSelected = true;
-				// set the color to the UserItems
-				
-
-				//bunifuColorTransition1.AutoTransition = true;
+				//ColorTransition1.AutoTransition = true;
 				this.BackColor = Color.SeaGreen;
 				SharedData.UsersSelected.Add(Convert.ToInt32(UserID));
-
+				
 
 
 				//style the user item
@@ -75,7 +72,7 @@ namespace ChatAPP
 			{
 				_isSelected = false;
 				this.BackColor = Color.FromArgb(51, 65, 92);
-				bunifuColorTransition1.AutoTransition = false;
+				ColorTransition1.AutoTransition = false;
 				SharedData.UsersSelected.Remove(Convert.ToInt32(UserID));
 			}
 		}

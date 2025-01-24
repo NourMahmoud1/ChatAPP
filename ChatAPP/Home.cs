@@ -246,17 +246,17 @@ namespace ChatAPP
 
 		private void btnSendMessage_Click(object sender, EventArgs e)
 		{
-			//check if user is selected
-			if (SharedData.UsersSelected.Count == 0)
-			{
-				MessageBox.Show("Please select a user to send message");
-			}
+			////check if user is selected
+			//if (SharedData.UsersSelected.Count == 0)
+			//{
+			//	MessageBox.Show("Please select a user to send message");
+			//}
 			//chech the message and subjectNour
-			else if (txtMessage.Text == "" || txtSubject.Text == "")
+			if (txtMessage.Text == "" || txtSubject.Text == "")
 			{
 				MessageBox.Show("Please enter the message and subject");
 			}
-			else
+			else if (SharedData.UsersSelected.Count > 0)
 			{
 				//send message
 				if (NewMessageBL.NewMessage(txtMessage.Text, txtSubject.Text) == 1)
@@ -272,8 +272,37 @@ namespace ChatAPP
 				{
 					MessageBox.Show("Message Sending Failed");
 				}
+			} else if (SharedData.GroupsSelected.Count > 0)
+			{
+				//foreach (var group in SharedData.GroupsSelected)
+				//{
+				//	SharedData.UsersSelected.Clear();
+				//	DataTable dt = NewMessageBL.GetUsersInGroup(group);
+				//	foreach (DataRow row in dt.Rows)
+				//	{
+				//		SharedData.UsersSelected.Add(Convert.ToInt32(row["UserId"]));
+				//	}
+				//}
+
+				//send message
+				if (NewMessageBL.NewMessageGroup(txtMessage.Text, txtSubject.Text) == 1)
+				{
+					MessageBox.Show("Message Sent Successfully");
+					//clear the textboxes
+					txtMessage.Text = "";
+					txtSubject.Text = "";
+					GenerateDynamicUserControlAllMessages();
+				}
+				else
+				{
+					MessageBox.Show("Message Sending Failed");
+				}
 			}
-		}
+			else
+			{
+				MessageBox.Show("Please select a user or group to send message");
+			}
+		}	
 
 
 		private void messageDetails1_Load(object sender, EventArgs e)
@@ -372,6 +401,37 @@ namespace ChatAPP
 		{
 			GenerateDynamicUserControlAllMessages();
 			flowLayoutMessages.Controls.Clear();
+		}
+
+		private void btnGroups_Click(object sender, EventArgs e)
+		{
+			SharedData.UsersSelected.Clear();
+			flowLayoutAllUsers.Controls.Clear();
+			DataTable dt = NewMessageBL.GetAllGroups();
+
+			if (dt != null || dt.Rows.Count > 0)
+			{
+				GroupsItems[] listItems = new GroupsItems[5];
+
+				for (int i = 0; i < 1; i++)
+				{
+					foreach (DataRow row in dt.Rows)
+					{
+						listItems[i] = new GroupsItems();
+						listItems[i].GroupName = row["GroupName"].ToString();
+						listItems[i].GroupID = row["GroupId"].ToString();
+
+						flowLayoutAllUsers.Controls.Add(listItems[i]);
+					}
+				}
+			}
+		}
+
+		private void btnUsers_Click(object sender, EventArgs e)
+		{
+			SharedData.UsersSelected.Clear();
+			SharedData.GroupsSelected.Clear();
+			GenerateDynamicUserControlAllUsers();
 		}
 	}
 }

@@ -74,11 +74,11 @@
 			// lblTime
 			// 
 			this.lblTime.BackColor = System.Drawing.Color.Transparent;
-			this.lblTime.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold);
+			this.lblTime.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTime.ForeColor = System.Drawing.Color.White;
 			this.lblTime.Location = new System.Drawing.Point(15, 30);
 			this.lblTime.Name = "lblTime";
-			this.lblTime.Size = new System.Drawing.Size(48, 25);
+			this.lblTime.Size = new System.Drawing.Size(39, 24);
 			this.lblTime.TabIndex = 13;
 			this.lblTime.Text = "time";
 			this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
@@ -98,7 +98,6 @@
 			// 
 			// guna2Elipse1
 			// 
-			this.guna2Elipse1.BorderRadius = 4;
 			this.guna2Elipse1.TargetControl = this;
 			// 
 			// MessageDetails

@@ -30,7 +30,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserItem));
-			this.bunifuColorTransition1 = new Guna.UI2.WinForms.Guna2ColorTransition(this.components);
+			this.ColorTransition1 = new Guna.UI2.WinForms.Guna2ColorTransition(this.components);
 			this.lblUserName = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.lblUserMail = new Guna.UI2.WinForms.Guna2HtmlLabel();
 			this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -39,15 +39,16 @@
 			((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// bunifuColorTransition1
+			// ColorTransition1
 			// 
-			this.bunifuColorTransition1.ColorArray = new System.Drawing.Color[] {
+			this.ColorTransition1.AutoTransition = true;
+			this.ColorTransition1.ColorArray = new System.Drawing.Color[] {
         System.Drawing.Color.SeaGreen,
         System.Drawing.Color.SpringGreen};
-			this.bunifuColorTransition1.EndColor = System.Drawing.Color.White;
-			this.bunifuColorTransition1.Interval = 4;
-			this.bunifuColorTransition1.ProgressValue = 50;
-			this.bunifuColorTransition1.StartColor = System.Drawing.Color.PaleGreen;
+			this.ColorTransition1.EndColor = System.Drawing.Color.White;
+			this.ColorTransition1.Interval = 4;
+			this.ColorTransition1.ProgressValue = 50;
+			this.ColorTransition1.StartColor = System.Drawing.Color.PaleGreen;
 			// 
 			// lblUserName
 			// 
@@ -106,7 +107,7 @@
 			this.Controls.Add(this.lblUserName);
 			this.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Name = "UserItem";
-			this.Size = new System.Drawing.Size(336, 83);
+			this.Size = new System.Drawing.Size(333, 83);
 			this.Load += new System.EventHandler(this.UserItem_Load);
 			this.Click += new System.EventHandler(this.UserItem_Click);
 			((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -120,7 +121,7 @@
 		private Guna.UI2.WinForms.Guna2HtmlLabel lblUserName;
 		private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
 		private Guna.UI2.WinForms.Guna2ColorTransition guna2ColorTransition1;
-		public Guna.UI2.WinForms.Guna2ColorTransition bunifuColorTransition1;
+		public Guna.UI2.WinForms.Guna2ColorTransition ColorTransition1;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
 	}
 }

@@ -28,6 +28,22 @@ namespace ChatAPP.BL
 				return null;
 			}
 		}
+		public static DataTable GetAllGroups()
+		{
+			DataTable items = new DataTable();
+			try
+			{
+
+				string query = "SELECT * FROM Groups";
+				SqlCommand cmd = new SqlCommand(query);
+				return ChatDL.Select(cmd);
+			}
+			catch (Exception e)
+			{
+				DialogResult result = MessageBox.Show(e.Message.ToString());
+				return null;
+			}
+		}
 
 
 		/// <summary>
@@ -62,7 +78,34 @@ namespace ChatAPP.BL
 			return 1;
 			//string query = "INSERT INTO Messages(Body,Subject,DateSent,SenderID,RecipientID,IsRead) values(@Body,@Subject,@DateSent,@SenderID,@RecipientID,@IsRead)";
 		}
+		public static int NewMessageGroup(string message, string subject)
+		{
+			try
+			{
+				foreach (var groupID in SharedData.GroupsSelected)
+				{
+					//INSERT INTO Messages (Body, Subject, DateSent, SenderID, RecipientID, IsRead) SELECT 'Your message body', 'Your message subject', GETDATE(), 1, UserID, 0 FROM Users WHERE GroupId = 1;
+					string query = "INSERT INTO Messages(Body,Subject,DateSent,SenderID,RecipientID,IsRead) SELECT @Body,@Subject,@DateSent,@SenderID,UserID,@IsRead FROM Users WHERE GroupId = @GroupID";
+					SqlCommand cmd = new SqlCommand(query);
+					cmd.Parameters.AddWithValue("@Body", message);
+					cmd.Parameters.AddWithValue("@Subject", subject);
+					cmd.Parameters.AddWithValue("@DateSent", DateTime.Now);
+					cmd.Parameters.AddWithValue("@SenderID", SharedData.UserId);
+					//cmd.Parameters.AddWithValue("@RecipientID", recipientId);
+					cmd.Parameters.AddWithValue("@IsRead", 0);
+					cmd.Parameters.AddWithValue("@GroupID", groupID);
 
+					ChatDL.DML(cmd);
+				}
+			}
+			catch (Exception e)
+			{
+				DialogResult result = MessageBox.Show(e.Message.ToString());
+				return 0;
+			}
+			return 1;
+			//string query = "INSERT INTO Messages(Body,Subject,DateSent,SenderID,RecipientID,IsRead) values(@Body,@Subject,@DateSent,@SenderID,@RecipientID,@IsRead)";
+		}
 
 	}
 }
